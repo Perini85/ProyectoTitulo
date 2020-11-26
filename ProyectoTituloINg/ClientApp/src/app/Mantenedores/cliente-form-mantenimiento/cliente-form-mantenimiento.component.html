@@ -1,0 +1,121 @@
+<h1>{{titulo}}</h1>
+<div class="class row">
+<div class="class col-md-12">
+  <form [formGroup]="cliente" (ngSubmit)="GuardarCliente()">
+
+    <div class="form group">
+
+      <label>id Cliente</label>
+      <input type="text" class="form-control" readonly formControlName="idCliente" />
+
+    </div>
+
+  
+
+    <div class="form group">
+      <label>Nombre</label>
+      <input type="text" class="form-control" formControlName="nombreCliente" />
+      <div style="color:red" *ngIf="cliente.controls['nombreCliente'].errors?.required">
+        Coloque nombre
+      </div>
+      <div style="color:red" *ngIf="cliente.controls['nombreCliente'].errors?.maxlength">
+        Supero la cantidad maxima
+      </div>
+
+    </div>
+
+    <div class="form group">
+      <label>Apellidos</label>
+      <input type="text" class="form-control" formControlName="apellidosCliente" />
+      <div style="color:red" *ngIf="cliente.controls['apellidosCliente'].errors?.required">
+        Coloque Apellido
+      </div>
+      <div style="color:red" *ngIf="cliente.controls['apellidosCliente'].errors?.maxlength">
+        Supero la cantidad maxima
+      </div>
+
+    </div>
+
+    <div class="form group">
+      <label>Rut</label>
+      <input type="text" class="form-control" formControlName="rutCliente" />
+      <div style="color:red" *ngIf="cliente.controls['rutCliente'].errors?.required">
+        Coloque rut
+      </div>
+      <div style="color:red" *ngIf="cliente.controls['rutCliente'].errors?.maxlength">
+        Supero la cantidad maxima
+      </div>
+
+    </div>
+
+    <div class="form group">
+      <label>Direccion</label>
+      <input type="text" class="form-control" formControlName="direccionCliente" />
+      <div style="color:red" *ngIf="cliente.controls['direccionCliente'].errors?.required">
+        Coloque direccion
+      </div>
+      <div style="color:red" *ngIf="cliente.controls['direccionCliente'].errors?.maxlength">
+        Supero la cantidad maxima
+      </div>
+
+    </div>
+
+    <div class="form group">
+      <label>Numero de contacto</label>
+      <input type="text" class="form-control" formControlName="numero" />
+      <div style="color:red" *ngIf="cliente.controls['numero'].errors?.required">
+        Coloque numero de contacto
+      </div>
+      <div style="color:red" *ngIf="cliente.controls['numero'].errors?.maxlength">
+        Supero la cantidad maxima
+      </div>
+
+    </div>
+
+
+    <div class="form group">
+      <label>Correo electronico</label>
+      <input type="text" class="form-control" formControlName="correo" />
+      <div style="color:red" *ngIf="cliente.controls['correo'].errors?.required">
+        Coloque Correo
+      </div>
+      <div style="color:red" *ngIf="cliente.controls['correo'].errors?.maxlength">
+        Supero la cantidad maxima
+      </div>
+
+    </div>
+
+    <!--<div class="form-group" formControlName="idtipoCliente">
+    <label>Tipo de usuario</label>
+    <select class="form-control" formControlName="idtipoCliente">
+      <option value="">--Seleccione--</option>
+      <option [value]="tipoCliente.idTipoCliente" *ngFor="let tipoCliente of tipoClientes">{{tipoCliente.nombreTipoCliente}}</option>
+    </select>
+    <div style="color:red" *ngIf="cliente.controls['idtipoCliente'].errors?.required">
+      El tipo de usuario es obligatorio
+    </div>
+  </div>
+
+  <div class="form-group" formControlName="idcomuna">
+    <label>Tipo de usuario</label>
+    <select class="form-control" formControlName="idcomuna">
+      <option value="">--Seleccione--</option>
+      <option [value]="comuna.idComuna" *ngFor="let comuna of comunas">{{comuna.descripcion}}</option>
+    </select>
+    <div style="color:red" *ngIf="cliente.controls['idtipoCliente'].errors?.required">
+      El tipo de usuario es obligatorio
+    </div>
+  </div>-->
+
+
+    <div>
+      <input [disabled]="!cliente.valid" type="submit" value="Guardar" class="btn btn-primary " />
+      <button [routerLink]="['/mantenimiento-cliente']" class="btn btn-secondary">Regresar</button>
+    </div>
+  </form>
+</div>
+</div>
+
+<div style="margin:1em" *ngIf="cliente.valid==false">
+    <div class=" "alert alert-danger>el formulario no es valido, verifique que los campos son correctos</div>
+  </div>

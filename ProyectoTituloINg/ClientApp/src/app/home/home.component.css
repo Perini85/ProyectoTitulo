@@ -1,0 +1,13 @@
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout {
+  background: linear-gradient(rgba(221, 216, 216, 0.5),rgb(213, 213, 224)),url(../../assets/img/keyboard-886462_1920.jpg);
+  background-size: cover;
+  background-position: center;
+}

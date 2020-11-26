@@ -1,0 +1,95 @@
+
+<form [formGroup] ="clientes" (ngSubmit)="agregarCliente()">
+
+
+    <div class="form-group row">
+    <label class="control-label col-md-12"> Nombre del cliente</label>
+    <div class= "col-md-12">
+    <input type="text" class="form-control"  formControlName="nombreCliente">
+    </div>
+    </div>
+    <span class="text-danger ml-3" *ngIf="clientes.get('nombreCliente').hasError('required')&& clientes.get('nombreCliente').touched"> 
+        El nombre del cliente  es requerido</span>
+    
+    
+    
+    <div class="form-group row">
+        <label class="control-label col-md-12"> Apellido</label>
+        <div class= "col-md-12">
+        <input type="text" class="form-control" formControlName="apellidosCliente">
+        </div>
+        </div>
+        <span class="text-danger ml-3" *ngIf="clientes.get('apellidosCliente').hasError('required')&& clientes.get('apellidosCliente').touched">
+             El creador es requerido</span>
+    
+             <div class="form-group row">
+                <label class="control-label col-md-12"> Correo</label>
+                <div class= "col-md-12">
+                <input type="text" class="form-control" formControlName="correo">
+                </div>
+                </div>
+                <span class="text-danger ml-3" *ngIf="clientes.get('correo').hasError('required')&& clientes.get('correo').touched">
+                     El correo es requerido</span>
+    
+                     <div class="form-group row">
+                        <label class="control-label col-md-12"> Direccion</label>
+                        <div class= "col-md-12">
+                        <input type="text" class="form-control" formControlName="direccionCliente">
+                        </div>
+                        </div>
+                        <span class="text-danger ml-3" *ngIf="clientes.get('direccionCliente').hasError('required')&& clientes.get('direccionCliente').touched">
+                             La direccion es requerida</span>
+    
+                             
+                    
+    
+                              <div class="form-group row">
+                                <label class="control-label col-md-12"> Numero</label>
+                                <div class= "col-md-12">
+                                <input type="text" class="form-control" formControlName="numero">
+                                </div>
+                                </div>
+                                <span class="text-danger ml-3" *ngIf="clientes.get('numero').hasError('required')&& clientes.get('numero').touched">
+                                     El numero es requerido</span> 
+    
+                                     <div class="form-group row">
+                                        <label class="control-label col-md-12"> Rut</label>
+                                        <div class= "col-md-12">
+                                        <input type="text" class="form-control" formControlName="rutCliente">
+                                        </div>
+                                        </div>
+                                        <span class="text-danger ml-3" *ngIf="clientes.get('rutCliente').hasError('required')&& clientes.get('rutCliente').touched">
+                                             El numero es requerido</span>    
+
+
+                                             <div class="form-group row" formControlName="idcomuna">
+                                                <label class="control-label col-md-12"> comuna</label>
+                                                <select id="idcomuna" name="idcomuna"  formControlName="idcomuna" >
+                                                    <option value="1">Santiago</option>
+                                                    <option value="2">Ñuñoa</option>
+                                                    <option value="3">Providencia</option>
+                                                    <option value="4">Recoleta</option>
+                                                  </select>
+
+                                             </div> 
+    
+                                            
+    
+                                                     
+    
+                                         
+    
+                                                 
+    
+    
+                                                          
+    
+                     
+    
+            <div class="form-group">
+                <button class="btn btn-success float-right" [disabled]= "clientes.invalid">Aceptar</button>
+                <button [routerLink]= "['/']"class="btn btn-secondary float-left">Cancelar</button>
+            </div>
+    
+    </form>
+    
